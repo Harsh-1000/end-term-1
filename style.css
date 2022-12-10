@@ -1,0 +1,66 @@
+*{
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2980B9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.chance{
+    text-align: center;
+}
+img{
+    width: fit-content;
+    height: fit-content;
+
+}
+
+.findME{
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 640px;
+    perspective: 1000px;
+}
+
+.card{
+    width: 25%;
+    height: 25%;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card:active{
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.frontface,.backface{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    backface-visibility: hidden;
+
+
+}
+
+.frontface{
+    transform: rotateY(180deg);
+
+}
+
+.card.flip{
+    transform: rotateY(180deg);
+}
