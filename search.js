@@ -1,4 +1,4 @@
-function loadBook(filename, displayName) {
+function load(filename, displayName) {
     let currentBook = "";
     let url = "books/" + filename;
 
