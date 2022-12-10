@@ -41,11 +41,10 @@ function getDocStats(fileContent) {
 
     var uncommonWords = [];
 
-    //filter out the uncommon words
     uncommonWords = filterStopWords(wordArray);
 
 
-    //Count every word in the wordArray
+   
     for (let word in uncommonWords) {
         let wordValue = uncommonWords[word];
         if (wordDictionary[wordValue] > 0) {
@@ -55,12 +54,12 @@ function getDocStats(fileContent) {
         }
     }
 
-    //sort the array
+   
     let wordList = sortProperties(wordDictionary);
 
-    //Return the top 5 words
+    
     var top5Words = wordList.slice(0, 6);
-    //return the least 5 words
+  
     var least5Words = wordList.slice(-6, wordList.length);
 
     //Write the values to the page
@@ -86,10 +85,10 @@ function ULTemplate(items, element) {
 }
 
 function sortProperties(obj) {
-    //first convert the object to an array
+   
     let rtnArray = Object.entries(obj);
 
-    //Sort the array
+    
     rtnArray.sort(function (first, second) {
         return second[1] - first[1];
     });
@@ -98,7 +97,7 @@ function sortProperties(obj) {
 
 }
 
-//filter out stop words
+
 function filterStopWords(wordArray) {
     var commonWords = getStopWords();
     var commonObj = {};
@@ -123,7 +122,7 @@ function getStopWords() {
 }
 
 
-function performMark() {
+function perform() {
 
     //read the keyword
     var keyword = document.getElementById("keyword").value;
